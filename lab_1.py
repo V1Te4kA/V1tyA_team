@@ -15,7 +15,7 @@ with open('D:\pokemon_full.json') as file:
     name_of_pokemon = ''
     for item in list:
         description = item['description']
-       if len(description) > desc:
+        if len(description) > desc:
             desc = len(description)
             name_of_pokemon = item['name']
     print('Наиболее длинное описание имеет покемон', name_of_pokemon)
