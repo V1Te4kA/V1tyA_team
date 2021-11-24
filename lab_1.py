@@ -29,3 +29,21 @@ with open('D:\pokemon_full.json') as file:
                 words = len(i.split())
                 ability = i
     print('Больше всего слов содержит умение', ability)
+
+    #Задание на защиту
+    all_speeds = 0
+    speeds = []
+    speed = 0
+    counter_of_pokemons = 0
+    for item in list:
+        speed += item['stats']['speed']
+        counter_of_pokemons += 1
+    m = speed / counter_of_pokemons
+    for item in list:
+        speeds.append(item['stats']['speed'])
+    for i in speeds:
+        all_speeds += (i - m)**2
+    s = (all_speeds / m)**0.5 
+    for item in list:
+        if item['stats']['speed'] > m + s:
+            print('Покемон с нетипичной скоростью: ' + item['name'])
