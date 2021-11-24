@@ -45,5 +45,5 @@ with open('D:\pokemon_full.json') as file:
         all_speeds += (i - m)**2
     s = (all_speeds / m)**0.5 
     for item in list:
-        if item['stats']['speed'] > m + s:
+        if (item['stats']['speed'] > m + s) or (item['stats']['speed'] < m - s):
             print('Покемон с нетипичной скоростью: ' + item['name'])
